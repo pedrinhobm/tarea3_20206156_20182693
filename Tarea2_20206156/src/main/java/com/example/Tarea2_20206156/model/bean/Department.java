@@ -19,6 +19,12 @@ public class Department {
     // Añadir los atributos necesarios
     // No olvidar el encapsulamiento
 
+    @Override
+    public String toString() {
+        return departName;
+    }
+
+
     public int getDepartmentId() {
         return departmentId;
     }

@@ -15,8 +15,10 @@ public class Location {
     private String locationCity;
     private String locationAddress;
 
-    // Añadir los atributos necesarios
-    // No olvidar el encapsulamiento
+    @Override
+    public String toString() {
+        return  locationCity;
+    }
 
     public int getLocationId() {
         return locationId;
