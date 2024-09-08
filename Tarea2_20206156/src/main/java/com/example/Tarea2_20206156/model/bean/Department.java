@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package com.example.Tarea2_20206156.model.bean;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
  * @author Oscar A. Díaz Barriga
  */
+
+@Getter
+@Setter
 public class Department {
 
     private int departmentId;
@@ -25,27 +30,4 @@ public class Department {
     }
 
 
-    public int getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
-    }
-
-    public String getDepartName() {
-        return departName;
-    }
-
-    public void setDepartName(String departName) {
-        this.departName = departName;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 }

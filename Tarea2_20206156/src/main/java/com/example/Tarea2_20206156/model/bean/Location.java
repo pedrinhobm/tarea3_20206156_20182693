@@ -5,10 +5,16 @@
  */
 package com.example.Tarea2_20206156.model.bean;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *
  * @author Oscar A. Díaz Barriga
  */
+
+@Getter
+@Setter
 public class Location {
 
     private int locationId;
@@ -20,27 +26,5 @@ public class Location {
         return  locationCity;
     }
 
-    public int getLocationId() {
-        return locationId;
-    }
 
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
-    }
-
-    public String getLocationCity() {
-        return locationCity;
-    }
-
-    public void setLocationCity(String locationCity) {
-        this.locationCity = locationCity;
-    }
-
-    public String getLocationAddress() {
-        return locationAddress;
-    }
-
-    public void setLocationAddress(String locationAddress) {
-        this.locationAddress = locationAddress;
-    }
 }
