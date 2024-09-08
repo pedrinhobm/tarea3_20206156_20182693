@@ -1,4 +1,4 @@
-/*
+*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -81,12 +81,10 @@ public class EmployeeDAO extends BaseDAO {
                     employee.setLastName(rs.getString("last_name"));
                     employee.setEmail(rs.getString("email"));
 
-                    // Departamento
                     Department department = new Department();
                     department.setDepartName(rs.getString("department_name"));
                     employee.setDepartment(department);
 
-                    // Ubicación
                     Location location = new Location();
                     location.setLocationCity(rs.getString("city"));
                     employee.setLocation(location);
@@ -100,7 +98,7 @@ public class EmployeeDAO extends BaseDAO {
         return employee;
     }
 
-    public boolean deleteById(int id) {
+    public boolean deleteById(int id) { /* popup hecho */
         String sql =  "DELETE FROM employees WHERE employee_id = ?";
         boolean flag = false;
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
