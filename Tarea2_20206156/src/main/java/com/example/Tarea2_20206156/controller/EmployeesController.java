@@ -7,8 +7,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.Tarea2_20206156.model.bean.*;
 import com.example.Tarea2_20206156.model.repository.*;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import com.example.Tarea2_20206156.model.bean.*;
+import com.example.Tarea2_20206156.model.repository.*;
+
 
 import java.util.List;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -37,17 +45,17 @@ public class EmployeesController {
         return "employeeInfo";
     }
 
-        @GetMapping("/employee/delete/{id}")
-    public String borrarEmpleado(@PathVariable("id") int id, Model model) {
+
+    @GetMapping("/employee/delete/{id}") /* popup hecho */
+    public String borrarEmpleado(@PathVariable("id") int id, RedirectAttributes redirectAttributes) {
         boolean eliminado = employeesDAO.deleteById(id);
         if (eliminado) {
-            model.addAttribute("tipo_alert", "success");
-            model.addAttribute("msg", "Se borró el empleado");
+            redirectAttributes.addAttribute("msg", "Se borró el empleado");
         } else {
-            model.addAttribute("tipo_alert", "danger");
-            model.addAttribute("msg", "No se pudo borrar el empleado");
+            redirectAttributes.addAttribute("msg", "No se pudo borrar el empleado");
         }
         return "redirect:/employee";
     }
+
 
 }
